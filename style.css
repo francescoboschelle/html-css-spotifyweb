@@ -1,0 +1,29 @@
+/* #region reset */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* #endregion reset */
+
+/* #region debug */
+
+.debug * {
+  border: 1px dashed black;
+}
+
+/* #endregion debug */
+
+/* #region header */
+/* #endregion header */
+
+/* #region main */
+/* #endregion main */
+
+/* #region footer */
+/* #endregion footer */
+
+/* #region responsive */
+/* #endregion responsive */
