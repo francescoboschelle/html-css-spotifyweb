@@ -490,7 +490,16 @@ a {
       font-size: 1.25rem;
       flex-grow: 1;
 
+      .fa-backward-step {
+        margin-right: 5%;
+      }
+
+      .fa-forward-step {
+        margin-left: 5%;
+      }
+
       .fa-circle-play {
+        position: absolute;
         font-size: 2rem;
       }
 
