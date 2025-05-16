@@ -20,35 +20,41 @@
     />
     <title>Spotify</title>
   </head>
-  <body class="debug">
+  <body>
     <div class="wrapper">
       <div class="top">
         <div class="left">
-          <img src="./img/logo.svg" alt="Logo" class="logo" />
+          <div class="logo">
+            <img src="./img/logo.svg" alt="Logo" />
+          </div>
           <div class="sidebar">
             <div class="navigation">
-              <ul>
+              <ul id="top">
                 <li>
                   <a href="./"
-                    ><img src="./img/home.svg" alt="Home" />
+                    ><img src="./img/home.svg" alt="Home" class="filter" />
                     <p>Home</p></a
                   >
                 </li>
                 <li>
                   <a href="./"
-                    ><img src="./img/search.svg" alt="Search" />
+                    ><img src="./img/search.svg" alt="Search" class="filter" />
                     <p>Cerca</p></a
                   >
                 </li>
                 <li>
                   <a href="./"
-                    ><img src="./img/libreria.svg" alt="Library" />
+                    ><img
+                      src="./img/libreria.svg"
+                      alt="Library"
+                      class="filter"
+                    />
                     <p>La tua libreria</p></a
                   >
                 </li>
               </ul>
-              <h3>PLAYLIST</h3>
-              <ul>
+              <h4>PLAYLIST</h4>
+              <ul id="bottom">
                 <li>
                   <a href="./">
                     <div class="new_playlist">
@@ -62,11 +68,36 @@
                     <p>Nome Playlist</p>
                   </a>
                 </li>
+                <li>
+                  <a href="./">
+                    <p>Nome Playlist</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="./">
+                    <p>Nome Playlist</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="./">
+                    <p>Nome Playlist</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="./">
+                    <p>Nome Playlist</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="./">
+                    <p>Nome Playlist</p>
+                  </a>
+                </li>
               </ul>
             </div>
             <div class="account">
               <a href="./" class="download">
-                <img src="./img/download.svg" alt="Download" />
+                <img src="./img/download.svg" alt="Download" class="filter" />
                 <p>Installa app</p>
               </a>
               <hr />
@@ -83,27 +114,51 @@
           </div>
           <div class="main">
             <ul class="categories">
-              <li><a href="./">IN EVIDENZA</a></li>
-              <li><a href="./">PODCAST</a></li>
-              <li><a href="./">CLASSIFICHE</a></li>
-              <li><a href="./">GENERI E MOOD</a></li>
-              <li><a href="./">NUOVE USCITE</a></li>
-              <li><a href="./">SCOPRI</a></li>
+              <li>
+                <a href="./">IN EVIDENZA</a>
+                <hr />
+              </li>
+              <li>
+                <a href="./">PODCAST</a>
+                <hr />
+              </li>
+              <li>
+                <a href="./">CLASSIFICHE</a>
+                <hr />
+              </li>
+              <li>
+                <a href="./">GENERI E MOOD</a>
+                <hr />
+              </li>
+              <li>
+                <a href="./">NUOVE USCITE</a>
+                <hr />
+              </li>
+              <li>
+                <a href="./">SCOPRI</a>
+                <hr />
+              </li>
             </ul>
             <div class="container">
               <h2>Recently Played</h2>
               <div class="row">
                 <div class="col-2">
                   <a href="./"
-                    ><img src="./img/metal_lifting.jpg" alt="Heavy Metal"
-                  /></a>
+                    ><div class="image">
+                      <img src="./img/metal_lifting.jpg" alt="Heavy Metal" />
+                      <div class="play fa-regular fa-circle-play"></div>
+                    </div>
+                  </a>
                   <h3>Heavy Metal</h3>
                   <p>Subtitle</p>
                 </div>
                 <div class="col-2">
                   <a href="./"
-                    ><img src="./img/stranger.jpeg" alt="Stranger Things"
-                  /></a>
+                    ><div class="image">
+                      <img src="./img/stranger.jpeg" alt="Stranger Things" />
+                      <div class="play fa-regular fa-circle-play"></div>
+                    </div>
+                  </a>
                   <h3>
                     Stranger Things, Vol. 1 &lpar;a Netflix Original Series
                     Soundtrack&rpar;
@@ -112,27 +167,41 @@
                 </div>
                 <div class="col-2">
                   <a href="./"
-                    ><img src="./img/aquietplace.jpeg" alt="A quiet place"
-                  /></a>
+                    ><div class="image">
+                      <img src="./img/aquietplace.jpeg" alt="A Quiet Place" />
+                      <div class="play fa-regular fa-circle-play"></div>
+                    </div>
+                  </a>
                   <h3>A quiet place</h3>
                   <p>Subtitle</p>
                 </div>
                 <div class="col-2">
-                  <a href="./"><img src="./img/split.jpeg" alt="Split" /></a>
+                  <a href="./"
+                    ><div class="image">
+                      <img src="./img/split.jpeg" alt="Split" />
+                      <div class="play fa-regular fa-circle-play"></div>
+                    </div>
+                  </a>
                   <h3>Split</h3>
                   <p>Subtitle</p>
                 </div>
                 <div class="col-2">
                   <a href="./"
-                    ><img src="./img/cure.jpeg" alt="A Cure For Wellness"
-                  /></a>
+                    ><div class="image">
+                      <img src="./img/cure.jpeg" alt="A cure for wellness" />
+                      <div class="play fa-regular fa-circle-play"></div>
+                    </div>
+                  </a>
                   <h3>A cure for wellness</h3>
                   <p>Subtitle</p>
                 </div>
                 <div class="col-2">
                   <a href="./"
-                    ><img src="./img/sinister.jpeg" alt="Sinister"
-                  /></a>
+                    ><div class="image">
+                      <img src="./img/sinister.jpeg" alt="Sinister" />
+                      <div class="play fa-regular fa-circle-play"></div>
+                    </div>
+                  </a>
                   <h3>Sinister</h3>
                   <p>Subtitle</p>
                 </div>
@@ -142,14 +211,20 @@
               <div class="row">
                 <div class="col-2">
                   <a href="./"
-                    ><img src="./img/radar.jpeg" alt="Release Radar"
-                  /></a>
+                    ><div class="image">
+                      <img src="./img/radar.jpeg" alt="Radar" />
+                      <div class="play fa-regular fa-circle-play"></div>
+                    </div>
+                  </a>
                   <h3>Release Radar</h3>
                 </div>
                 <div class="col-2">
                   <a href="./"
-                    ><img src="./img/mixdaily.jpeg" alt="Daily Mix"
-                  /></a>
+                    ><div class="image">
+                      <img src="./img/mixdaily.jpeg" alt="Daily Mix" />
+                      <div class="play fa-regular fa-circle-play"></div>
+                    </div>
+                  </a>
                   <h3>Daily Mix 1</h3>
                 </div>
               </div>
@@ -158,13 +233,21 @@
                 <p>Piú ascolti, piú accurati saranno i suggerimenti.</p>
                 <div class="row">
                   <div class="col-2">
-                    <a href="./"><img src="./img/youg.jpeg" alt="Youg" /></a>
+                    <a href="./"
+                      ><div class="image">
+                        <img src="./img/youg.jpeg" alt="Youg" />
+                        <div class="play fa-regular fa-circle-play"></div>
+                      </div>
+                    </a>
                     <h3>Lana del Rey</h3>
                   </div>
                   <div class="col-2">
                     <a href="./"
-                      ><img src="./img/einaudi.jpeg" alt="Einaudi"
-                    /></a>
+                      ><div class="image">
+                        <img src="./img/einaudi.jpeg" alt="Einaudi" />
+                        <div class="play fa-regular fa-circle-play"></div>
+                      </div>
+                    </a>
                     <h3>Einaudi</h3>
                   </div>
                 </div>
@@ -178,7 +261,9 @@
           <img src="./img/sinister.jpeg" alt="Sinister" />
           <div class="song_name">
             <p>Sinister</p>
-            <h6>Brano Nome</h6>
+            <a href="./">
+              <h6>Brano Nome</h6>
+            </a>
           </div>
           <a href="./" class="fa-regular fa-heart"></a>
           <a href="./" class="fa-regular fa-folder"></a>
@@ -194,7 +279,9 @@
           <div class="status">
             <p>0&colon;25</p>
             <a href="./" class="progress_bar">
-              <div class="progress"></div>
+              <div class="progress">
+                <div class="pointer"></div>
+              </div>
             </a>
             <p>4&colon;35</p>
           </div>
@@ -204,7 +291,9 @@
           <a href="./" class="fa-solid fa-display"></a>
           <a href="./" class="fa-solid fa-volume-high"></a>
           <a href="./" class="progress_bar">
-            <div class="progress"></div>
+            <div class="progress">
+              <div class="pointer"></div>
+            </div>
           </a>
         </div>
       </div>
