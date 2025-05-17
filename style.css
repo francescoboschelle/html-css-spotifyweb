@@ -68,6 +68,10 @@ body {
   color: var(--col-text);
 
   background-color: var(--col-main);
+
+  /* for vw < 400px */
+  overflow-x: hidden;
+  /* =============== */
 }
 
 img {
@@ -98,6 +102,10 @@ a {
 
 .wrapper {
   height: 100vh;
+
+  /* for vw < 400px */
+  min-width: 400px;
+  /* =============== */
 }
 
 .btn-primary {
@@ -110,13 +118,15 @@ a {
 }
 
 .btn-primary:hover {
-  font-size: 1rem;
+  transform: scale(1.1);
+  transform-origin: center center;
 }
 
 .row {
   display: flex;
   flex-wrap: wrap;
   margin: 1.5rem -1rem;
+  justify-content: space-between;
 }
 
 [class^="col"] {
@@ -128,6 +138,11 @@ a {
 
 .col-2 {
   width: calc(100% / 12 * 2);
+  max-width: 300px;
+}
+
+.col-8 {
+  width: calc(100% / 12 * 8);
 }
 
 /* #endregion global */
@@ -138,23 +153,18 @@ a {
   display: flex;
   height: calc(100% - 90px);
 
-  .left {
-    width: 230px;
-    height: 100%;
-  }
-
   .right {
     width: calc(100vw - 230px);
     overflow-y: auto;
 
     .banner {
-      z-index: 1000;
       display: flex;
       position: sticky;
       top: 0;
+      z-index: 1;
       height: 90px;
       width: 100%;
-      padding: 0 1rem;
+      padding: 0 2rem;
 
       background-color: var(--col-darker);
 
@@ -163,6 +173,10 @@ a {
     }
 
     .main {
+      /* for vw < 400px */
+      overflow-x: hidden;
+      /* =============== */
+
       min-height: calc(100vh - 160px);
 
       [class^="col"] > a {
@@ -180,12 +194,13 @@ a {
       }
 
       .categories {
-        height: 40px;
-        margin-bottom: 2rem;
+        max-width: fit-content;
+        margin: 1rem auto 2rem auto;
+        padding: 0 2rem;
 
         display: flex;
-        align-items: center;
         justify-content: center;
+        flex-wrap: wrap;
         gap: 1rem;
 
         li {
@@ -199,18 +214,19 @@ a {
           }
 
           hr {
-            display: none;
+            display: block;
             height: 2px;
             border: 0;
             border-top: 2px solid var(--col-secondary);
             padding: 0;
             width: 30px;
+            margin-top: 0.25rem;
           }
         }
 
         li:hover {
-          hr {
-            display: block;
+          a {
+            color: var(--col-lightest);
           }
         }
       }
@@ -251,6 +267,8 @@ a {
   }
 
   .left {
+    width: 230px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -266,6 +284,10 @@ a {
         height: 45px;
         width: auto;
       }
+
+      > img:last-child {
+        display: none;
+      }
     }
 
     .sidebar {
@@ -274,8 +296,7 @@ a {
       justify-content: space-between;
       flex-grow: 1;
 
-      li,
-      h4 {
+      li {
         padding: 0 1rem;
         margin-bottom: 1rem;
 
@@ -397,11 +418,15 @@ a {
 /* #region bottom */
 
 .bottom {
+  position: relative;
+  z-index: 2;
   height: 90px;
   display: flex;
   justify-content: space-between;
+  flex-wrap: nowrap;
   padding: 1rem;
   width: 100%;
+  gap: 10px;
   background-color: var(--col-dark);
 
   .song_info,
@@ -409,7 +434,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 15%;
+    width: 20%;
     max-width: 200px;
 
     a:hover {
@@ -425,6 +450,12 @@ a {
       h6:hover {
         text-decoration: underline;
       }
+    }
+
+    .actions {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
     }
 
     img {
@@ -469,7 +500,7 @@ a {
   .player {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    align-items: center;
     width: 45%;
     max-width: 600px;
 
@@ -477,7 +508,8 @@ a {
     .status {
       display: flex;
       align-items: center;
-      gap: 5%;
+      gap: 10px;
+      width: 100%;
 
       a,
       p {
@@ -486,25 +518,17 @@ a {
     }
 
     .controls {
-      justify-content: center;
+      justify-content: space-between;
       font-size: 1.25rem;
       flex-grow: 1;
-
-      .fa-backward-step {
-        margin-right: 5%;
-      }
-
-      .fa-forward-step {
-        margin-left: 5%;
-      }
+      max-width: 300px;
 
       .fa-circle-play {
-        position: absolute;
         font-size: 2rem;
       }
 
       .fa-circle-play:hover {
-        font-size: 2.5rem;
+        transform: scale(1.1);
       }
     }
 
@@ -531,8 +555,117 @@ a {
 
 /* #endregion bottom */
 
-/* #region footer */
-/* #endregion footer */
-
 /* #region responsive */
+
+@media screen and (max-width: 992px) {
+  [class^="col"] {
+    padding: 1rem 1%;
+  }
+
+  .container {
+    width: 90%;
+  }
+
+  .row {
+    justify-content: flex-start;
+    margin: 1.5rem -1%;
+  }
+
+  .col-md-3 {
+    width: calc(100% / 12 * 3);
+  }
+
+  .col-md-6 {
+    width: calc(100% / 12 * 6);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 85%;
+  }
+
+  .col-8.hidden {
+    display: none;
+  }
+
+  .col-sm-6 {
+    width: calc(100% / 12 * 6);
+  }
+
+  .bottom {
+    .song_info,
+    .other {
+      width: 150px;
+
+      .actions {
+        flex-direction: column;
+        gap: 5px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .top {
+    .left {
+      width: 50px;
+
+      .logo {
+        padding: 0.5rem;
+
+        > img:first-child {
+          display: none;
+        }
+
+        > img:last-child {
+          display: block;
+        }
+      }
+
+      .sidebar {
+        .navigation {
+          #top {
+            p {
+              display: none;
+            }
+          }
+
+          #bottom {
+            display: none;
+          }
+        }
+
+        .account {
+          hr {
+            display: none;
+          }
+
+          .user {
+            img {
+              height: auto;
+            }
+          }
+
+          p {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .right {
+      width: calc(100vw - 50px);
+    }
+  }
+
+  .bottom {
+    .song_info {
+      .song_name {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
 /* #endregion responsive */
