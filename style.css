@@ -157,7 +157,6 @@ a {
     width: calc(100vw - 230px);
 
     .banner {
-      display: flex;
       position: sticky;
       top: 0;
       z-index: 1;
@@ -167,8 +166,8 @@ a {
 
       background-color: var(--col-darker);
 
-      align-items: center;
-      justify-content: flex-end;
+      align-content: center;
+      justify-items: end;
     }
 
     .main {
@@ -264,7 +263,6 @@ a {
 
   .left {
     width: 230px;
-    height: 100%;
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -558,10 +556,6 @@ a {
     padding: 1rem 1%;
   }
 
-  .container {
-    width: 90%;
-  }
-
   .row {
     justify-content: flex-start;
     margin: 1.5rem -1%;
@@ -577,10 +571,6 @@ a {
 }
 
 @media screen and (max-width: 768px) {
-  .container {
-    width: 85%;
-  }
-
   .col-8.hidden {
     display: none;
   }
